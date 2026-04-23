@@ -33,40 +33,64 @@ function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
+function ShieldIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+  );
+}
+
+function StarIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+    </svg>
+  );
+}
+
+function UsersIcon({ className = "w-8 h-8" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+    </svg>
+  );
+}
+
 /* ─── Sections ─── */
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+    <nav className="sticky top-0 z-50 bg-[#FDF8F3]/90 backdrop-blur-md border-b border-[#E8DDD0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="#" className="text-xl font-bold text-primary">
+        <a href="#" className="font-display text-2xl font-bold text-terracotta tracking-tight">
           CertiHogar
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground">
-          <a href="#beneficios" className="hover:text-primary transition">
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/80">
+          <a href="#beneficios" className="hover:text-terracotta transition">
             Beneficios
           </a>
-          <a href="#como-funciona" className="hover:text-primary transition">
+          <a href="#como-funciona" className="hover:text-terracotta transition">
             Cómo funciona
           </a>
-          <a href="#capacitacion" className="hover:text-primary transition">
-            Capacitación
+          <a href="#certificacion" className="hover:text-terracotta transition">
+            Certificación
           </a>
-          <a href="#precios" className="hover:text-primary transition">
+          <a href="#precios" className="hover:text-terracotta transition">
             Precios
           </a>
-          <a href="#testimonios" className="hover:text-primary transition">
+          <a href="#testimonios" className="hover:text-terracotta transition">
             Testimonios
           </a>
-          <a href="#faq" className="hover:text-primary transition">
+          <a href="#faq" className="hover:text-terracotta transition">
             FAQ
           </a>
           <a
             href="#contacto"
-            className="bg-primary text-white px-5 py-2 rounded-full hover:bg-primary-dark transition"
+            className="bg-terracotta text-white px-5 py-2 rounded-full hover:bg-primary-dark transition shadow-sm"
           >
             Contacto
           </a>
@@ -79,7 +103,7 @@ function Navbar() {
           aria-label="Menú"
         >
           <svg
-            className="w-6 h-6"
+            className="w-6 h-6 text-foreground"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -104,28 +128,28 @@ function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-200 bg-white px-4 pb-4 space-y-3 text-sm font-medium">
-          <a href="#beneficios" className="block py-2" onClick={() => setOpen(false)}>
+        <div className="md:hidden border-t border-[#E8DDD0] bg-[#FDF8F3] px-4 pb-4 space-y-3 text-sm font-medium">
+          <a href="#beneficios" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
             Beneficios
           </a>
-          <a href="#como-funciona" className="block py-2" onClick={() => setOpen(false)}>
+          <a href="#como-funciona" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
             Cómo funciona
           </a>
-          <a href="#capacitacion" className="block py-2" onClick={() => setOpen(false)}>
-            Capacitación
+          <a href="#certificacion" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
+            Certificación
           </a>
-          <a href="#precios" className="block py-2" onClick={() => setOpen(false)}>
+          <a href="#precios" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
             Precios
           </a>
-          <a href="#testimonios" className="block py-2" onClick={() => setOpen(false)}>
+          <a href="#testimonios" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
             Testimonios
           </a>
-          <a href="#faq" className="block py-2" onClick={() => setOpen(false)}>
+          <a href="#faq" className="block py-2 text-foreground/80" onClick={() => setOpen(false)}>
             FAQ
           </a>
           <a
             href="#contacto"
-            className="block bg-primary text-white text-center py-2 rounded-full"
+            className="block bg-terracotta text-white text-center py-2.5 rounded-full"
             onClick={() => setOpen(false)}
           >
             Contacto
@@ -138,33 +162,61 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="bg-gradient-to-br from-primary to-[#164f63] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight max-w-4xl mx-auto">
-          Capacita y certifica a tu personal del hogar con respaldo práctico y
-          verificable
-        </h1>
-        <p className="mt-6 text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-          En CertiHogar ayudamos a familias y empleadores de Ciudad de México a
-          profesionalizar a su personal del hogar con formación, evaluación real
-          y acceso a una bolsa laboral básica de egresadas certificadas.
-        </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contacto"
-            className="w-full sm:w-auto bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition shadow-lg"
-          >
-            Solicitar información
-          </a>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold px-8 py-4 rounded-full text-lg transition border border-white/20"
-          >
-            <WhatsAppIcon />
-            Hablar por WhatsApp
-          </a>
+    <section className="relative overflow-hidden">
+      {/* Desert sunset gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#F5C6A8] via-[#E8805A]/40 to-[#C9A96E]/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#FDF8F3] via-transparent to-transparent opacity-60" />
+
+      {/* Subtle decorative circles */}
+      <div className="absolute top-10 right-10 w-72 h-72 rounded-full bg-[#F2D4A7]/30 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#E89B7B]/20 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-40">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/80 mb-4">
+            Capacitación certificada en CDMX
+          </p>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] text-deep tracking-tight">
+            Profesionaliza a tu personal del hogar
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-deep/75 max-w-2xl leading-relaxed">
+            En CertiHogar ayudamos a familias y empleadores de Ciudad de México a
+            profesionalizar a su personal del hogar con formación práctica, evaluación real
+            y acceso a una bolsa laboral de egresadas certificadas.
+          </p>
+          <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
+            <a
+              href="#contacto"
+              className="w-full sm:w-auto bg-terracotta hover:bg-primary-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition shadow-lg shadow-terracotta/25 hover:shadow-xl hover:shadow-terracotta/30"
+            >
+              Solicitar información
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/70 hover:bg-white backdrop-blur-sm text-deep font-semibold px-8 py-4 rounded-full text-lg transition border border-deep/10 shadow-sm"
+            >
+              <WhatsAppIcon className="w-5 h-5 text-green-600" />
+              Hablar por WhatsApp
+            </a>
+          </div>
+
+          {/* Trust badges */}
+          <div className="mt-14 flex flex-wrap items-center gap-6 text-sm text-deep/50">
+            <div className="flex items-center gap-2">
+              <ShieldIcon className="w-5 h-5" />
+              <span>Certificación verificable</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <StarIcon className="w-5 h-5" />
+              <span>Evaluación práctica real</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <UsersIcon className="w-5 h-5" />
+              <span>Bolsa laboral incluida</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -175,6 +227,7 @@ function Beneficios() {
   const items = [
     {
       title: "Para familias",
+      icon: "home",
       list: [
         "Personal capacitado con estándares verificables",
         "Mayor confianza y tranquilidad en casa",
@@ -184,6 +237,7 @@ function Beneficios() {
     },
     {
       title: "Para empleadores y agencias",
+      icon: "briefcase",
       list: [
         "Profesionalización del personal a su cargo",
         "Diferenciación competitiva con certificación",
@@ -194,29 +248,43 @@ function Beneficios() {
   ];
 
   return (
-    <section id="beneficios" className="py-20 bg-white">
+    <section id="beneficios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Propuesta de valor
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           ¿Por qué elegir CertiHogar?
         </h2>
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-5 text-center text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
           Ofrecemos un proceso integral de capacitación, evaluación práctica y
           certificación diseñado para elevar el estándar del trabajo del hogar.
         </p>
-        <div className="mt-14 grid md:grid-cols-2 gap-10">
+        <div className="mt-16 grid md:grid-cols-2 gap-8">
           {items.map((group) => (
             <div
               key={group.title}
-              className="bg-background rounded-2xl p-8 border border-gray-100"
+              className="bg-gradient-to-br from-sand to-[#FDF8F3] rounded-3xl p-8 md:p-10 border border-sand-dark/50 shadow-sm"
             >
-              <h3 className="text-xl font-semibold text-primary mb-6">
+              <h3 className="text-xl font-bold text-deep mb-6 flex items-center gap-3">
+                <span className="w-10 h-10 rounded-2xl bg-terracotta/10 flex items-center justify-center">
+                  {group.icon === "home" ? (
+                    <svg className="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+                    </svg>
+                  )}
+                </span>
                 {group.title}
               </h3>
               <ul className="space-y-4">
                 {group.list.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-terracotta flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground/80">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -232,45 +300,47 @@ function ComoFunciona() {
   const steps = [
     {
       num: "1",
-      title: "Solicitas información",
-      desc: "Llena el formulario o escríbenos por WhatsApp para conocer los detalles del programa.",
+      title: "Solicita e inscribe",
+      desc: "Llena el formulario o escríbenos por WhatsApp. Selecciona el paquete adecuado e inscribe a tu personal al curso.",
     },
     {
       num: "2",
-      title: "Inscripción a capacitación",
-      desc: "Selecciona el paquete adecuado e inscribe a tu personal al curso base de trabajo del hogar.",
+      title: "Capacitación y evaluación",
+      desc: "Tu personal completa el curso base y realiza una evaluación práctica con checklist. Al aprobar, recibe su certificado digital verificable.",
     },
     {
       num: "3",
-      title: "Evaluación y certificación",
-      desc: "Tu personal realiza una evaluación práctica con checklist. Al aprobar, recibe un certificado digital verificable.",
-    },
-    {
-      num: "4",
-      title: "Acceso a bolsa laboral",
-      desc: "Las egresadas certificadas obtienen un perfil laboral y acceso a nuestra bolsa laboral básica.",
+      title: "Certificación y bolsa laboral",
+      desc: "Las egresadas obtienen su certificado digital con QR verificable, perfil profesional y acceso a nuestra bolsa laboral.",
     },
   ];
 
   return (
-    <section id="como-funciona" className="py-20 bg-background">
+    <section id="como-funciona" className="py-24 bg-sand">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Proceso simple
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           ¿Cómo funciona?
         </h2>
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-          Un proceso simple y transparente en 4 pasos.
+        <p className="mt-5 text-center text-foreground/60 max-w-2xl mx-auto text-lg">
+          Un proceso transparente en 3 pasos.
         </p>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid md:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((s) => (
-            <div key={s.num} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-primary text-white text-2xl font-bold flex items-center justify-center mx-auto">
+            <div key={s.num} className="relative text-center group">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-terracotta to-coral text-white text-2xl font-bold flex items-center justify-center mx-auto shadow-lg shadow-terracotta/20 group-hover:scale-105 transition-transform">
                 {s.num}
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">
+              {/* Connector line (hidden on mobile and last item) */}
+              {s.num !== "3" && (
+                <div className="hidden md:block absolute top-8 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px bg-gradient-to-r from-terracotta/30 to-transparent" />
+              )}
+              <h3 className="mt-6 text-xl font-bold text-deep">
                 {s.title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+              <p className="mt-3 text-foreground/60 leading-relaxed">
                 {s.desc}
               </p>
             </div>
@@ -281,7 +351,7 @@ function ComoFunciona() {
   );
 }
 
-function Capacitacion() {
+function Certificacion() {
   const features = [
     {
       title: "Curso base de trabajo del hogar",
@@ -306,28 +376,35 @@ function Capacitacion() {
   ];
 
   return (
-    <section id="capacitacion" className="py-20 bg-white">
+    <section id="certificacion" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Programa completo
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           Capacitación y certificación
         </h2>
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
-          Nuestro programa MVP incluye todo lo necesario para profesionalizar al
+        <p className="mt-5 text-center text-foreground/60 max-w-2xl mx-auto text-lg leading-relaxed">
+          Nuestro programa incluye todo lo necesario para profesionalizar al
           personal del hogar.
         </p>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((f) => (
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((f, i) => (
             <div
               key={f.title}
-              className="bg-background rounded-2xl p-6 border border-gray-100 hover:shadow-md transition"
+              className={`rounded-3xl p-7 border border-sand-dark/50 hover:shadow-lg hover:shadow-terracotta/5 transition-all duration-300 ${
+                i === 2 ? "bg-gradient-to-br from-terracotta to-coral text-white sm:col-span-2 lg:col-span-1" : "bg-sand"
+              }`}
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <CheckCircle className="w-6 h-6 text-primary" />
+              <div className={`w-11 h-11 rounded-2xl flex items-center justify-center mb-5 ${
+                i === 2 ? "bg-white/20" : "bg-terracotta/10"
+              }`}>
+                <CheckCircle className={`w-6 h-6 ${i === 2 ? "text-white" : "text-terracotta"}`} />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className={`text-lg font-bold ${i === 2 ? "text-white" : "text-deep"}`}>
                 {f.title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm leading-relaxed">
+              <p className={`mt-3 text-sm leading-relaxed ${i === 2 ? "text-white/85" : "text-foreground/60"}`}>
                 {f.desc}
               </p>
             </div>
@@ -398,55 +475,58 @@ function Precios() {
   ];
 
   return (
-    <section id="precios" className="py-20 bg-background">
+    <section id="precios" className="py-24 bg-sand">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Inversión
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           Paquetes y precios
         </h2>
-        <p className="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-5 text-center text-foreground/60 max-w-2xl mx-auto text-lg">
           Planes diseñados para familias, empleadores particulares y pequeñas
           agencias.
         </p>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((p) => (
             <div
               key={p.name}
-              className={`relative rounded-2xl p-6 border flex flex-col ${
+              className={`relative rounded-3xl p-7 flex flex-col transition-all duration-300 hover:shadow-lg ${
                 p.popular
-                  ? "border-primary bg-white shadow-lg ring-2 ring-primary"
-                  : "border-gray-200 bg-white"
+                  ? "bg-gradient-to-br from-terracotta to-coral text-white shadow-xl shadow-terracotta/20 ring-0 scale-[1.02]"
+                  : "bg-white border border-sand-dark/50 hover:shadow-terracotta/5"
               }`}
             >
               {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-deep text-xs font-bold px-4 py-1 rounded-full shadow-sm">
                   Más popular
                 </span>
               )}
-              <h3 className="text-lg font-semibold text-foreground">
+              <h3 className={`text-lg font-bold ${p.popular ? "text-white" : "text-deep"}`}>
                 {p.name}
               </h3>
-              <p className="text-sm text-gray-500 mt-1">{p.desc}</p>
-              <div className="mt-4">
-                <span className="text-3xl font-bold text-primary">
+              <p className={`text-sm mt-1 ${p.popular ? "text-white/70" : "text-foreground/50"}`}>{p.desc}</p>
+              <div className="mt-5">
+                <span className={`text-3xl font-bold ${p.popular ? "text-white" : "text-terracotta"}`}>
                   {p.price}
                 </span>
-                <span className="text-sm text-gray-500 ml-1">{p.unit}</span>
+                <span className={`text-sm ml-1 ${p.popular ? "text-white/70" : "text-foreground/50"}`}>{p.unit}</span>
               </div>
               <ul className="mt-6 space-y-3 flex-1">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
-                    <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                    <span>{f}</span>
+                    <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${p.popular ? "text-white/80" : "text-terracotta"}`} />
+                    <span className={p.popular ? "text-white/90" : ""}>{f}</span>
                   </li>
                 ))}
               </ul>
               <a
                 href="#contacto"
-                className={`mt-6 block text-center py-3 rounded-full font-semibold transition ${
+                className={`mt-7 block text-center py-3.5 rounded-full font-semibold transition ${
                   p.popular
-                    ? "bg-primary text-white hover:bg-primary-dark"
-                    : "bg-primary/10 text-primary hover:bg-primary/20"
+                    ? "bg-white text-terracotta hover:bg-white/90 shadow-sm"
+                    : "bg-terracotta/10 text-terracotta hover:bg-terracotta/20"
                 }`}
               >
                 Solicitar información
@@ -456,18 +536,18 @@ function Precios() {
         </div>
 
         {/* Additional services */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center text-center">
-          <div className="bg-white rounded-xl px-6 py-4 border border-gray-200">
-            <span className="text-sm text-gray-600">Recertificación</span>
-            <p className="text-xl font-bold text-primary mt-1">$590 MXN</p>
+        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center text-center">
+          <div className="bg-white rounded-2xl px-8 py-5 border border-sand-dark/50 shadow-sm">
+            <span className="text-sm text-foreground/50">Recertificación</span>
+            <p className="text-xl font-bold text-terracotta mt-1">$590 MXN</p>
           </div>
-          <div className="bg-white rounded-xl px-6 py-4 border border-gray-200">
-            <span className="text-sm text-gray-600">
+          <div className="bg-white rounded-2xl px-8 py-5 border border-sand-dark/50 shadow-sm">
+            <span className="text-sm text-foreground/50">
               Acceso a bolsa laboral (sin paquete)
             </span>
-            <p className="text-xl font-bold text-primary mt-1">
+            <p className="text-xl font-bold text-terracotta mt-1">
               $390 MXN{" "}
-              <span className="text-sm font-normal text-gray-500">
+              <span className="text-sm font-normal text-foreground/40">
                 cuota única
               </span>
             </p>
@@ -498,18 +578,21 @@ function Testimonios() {
   ];
 
   return (
-    <section id="testimonios" className="py-20 bg-white">
+    <section id="testimonios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Prueba social
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           Lo que dicen nuestros clientes
         </h2>
-        <div className="mt-14 grid md:grid-cols-3 gap-8">
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-background rounded-2xl p-6 border border-gray-100"
+              className="bg-sand rounded-3xl p-7 border border-sand-dark/50 hover:shadow-md transition-shadow duration-300"
             >
-              <div className="flex gap-1 text-secondary mb-4">
+              <div className="flex gap-1 text-accent mb-5">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
@@ -521,12 +604,12 @@ function Testimonios() {
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 text-sm leading-relaxed italic">
+              <p className="text-foreground/70 leading-relaxed italic">
                 &ldquo;{t.text}&rdquo;
               </p>
-              <div className="mt-4 pt-4 border-t border-gray-100">
-                <p className="font-semibold text-foreground">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.role}</p>
+              <div className="mt-5 pt-5 border-t border-sand-dark/50">
+                <p className="font-bold text-deep">{t.name}</p>
+                <p className="text-sm text-foreground/50">{t.role}</p>
               </div>
             </div>
           ))}
@@ -567,24 +650,27 @@ function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 bg-background">
+    <section id="faq" className="py-24 bg-sand">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+        <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+          Resolvemos tus dudas
+        </p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
           Preguntas frecuentes
         </h2>
         <div className="mt-14 space-y-3">
           {faqs.map((f, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+              className="bg-white rounded-2xl border border-sand-dark/50 overflow-hidden shadow-sm"
             >
               <button
                 onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-4 text-left font-medium text-foreground hover:bg-gray-50 transition"
+                className="w-full flex items-center justify-between px-6 py-5 text-left font-medium text-deep hover:bg-sand/50 transition"
               >
                 <span>{f.q}</span>
                 <svg
-                  className={`w-5 h-5 flex-shrink-0 text-gray-400 transition-transform ${
+                  className={`w-5 h-5 flex-shrink-0 text-terracotta/50 transition-transform duration-200 ${
                     openIdx === i ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -600,7 +686,7 @@ function FAQ() {
                 </svg>
               </button>
               {openIdx === i && (
-                <div className="px-6 pb-4 text-sm text-gray-600 leading-relaxed">
+                <div className="px-6 pb-5 text-foreground/60 leading-relaxed">
                   {f.a}
                 </div>
               )}
@@ -644,22 +730,25 @@ function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="py-20 bg-white">
+    <section id="contacto" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground">
+          <p className="text-sm font-semibold uppercase tracking-widest text-terracotta/70 text-center mb-3">
+            Contáctanos
+          </p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-center text-deep">
             Solicita información
           </h2>
-          <p className="mt-4 text-center text-gray-600">
+          <p className="mt-5 text-center text-foreground/60 text-lg">
             Completa el formulario y nos pondremos en contacto contigo a la
             brevedad.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-10 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-12 space-y-5">
             <div>
               <label
                 htmlFor="nombre"
-                className="block text-sm font-medium text-foreground mb-1"
+                className="block text-sm font-medium text-deep mb-2"
               >
                 Nombre completo
               </label>
@@ -669,7 +758,7 @@ function ContactForm() {
                 required
                 value={form.nombre}
                 onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                className="w-full px-5 py-3.5 rounded-2xl border border-sand-dark bg-sand focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta outline-none transition"
                 placeholder="Tu nombre"
               />
             </div>
@@ -677,7 +766,7 @@ function ContactForm() {
               <div>
                 <label
                   htmlFor="whatsapp"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-deep mb-2"
                 >
                   WhatsApp
                 </label>
@@ -689,14 +778,14 @@ function ContactForm() {
                   onChange={(e) =>
                     setForm({ ...form, whatsapp: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                  className="w-full px-5 py-3.5 rounded-2xl border border-sand-dark bg-sand focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta outline-none transition"
                   placeholder="+52 55 1234 5678"
                 />
               </div>
               <div>
                 <label
                   htmlFor="correo"
-                  className="block text-sm font-medium text-foreground mb-1"
+                  className="block text-sm font-medium text-deep mb-2"
                 >
                   Correo electrónico
                 </label>
@@ -706,7 +795,7 @@ function ContactForm() {
                   required
                   value={form.correo}
                   onChange={(e) => setForm({ ...form, correo: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition"
+                  className="w-full px-5 py-3.5 rounded-2xl border border-sand-dark bg-sand focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta outline-none transition"
                   placeholder="tu@correo.com"
                 />
               </div>
@@ -714,7 +803,7 @@ function ContactForm() {
             <div>
               <label
                 htmlFor="mensaje"
-                className="block text-sm font-medium text-foreground mb-1"
+                className="block text-sm font-medium text-deep mb-2"
               >
                 Mensaje
               </label>
@@ -723,7 +812,7 @@ function ContactForm() {
                 rows={4}
                 value={form.mensaje}
                 onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition resize-none"
+                className="w-full px-5 py-3.5 rounded-2xl border border-sand-dark bg-sand focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta outline-none transition resize-none"
                 placeholder="¿En qué podemos ayudarte?"
               />
             </div>
@@ -731,13 +820,13 @@ function ContactForm() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 rounded-full transition disabled:opacity-60"
+              className="w-full bg-terracotta hover:bg-primary-dark text-white font-semibold py-4 rounded-full transition shadow-lg shadow-terracotta/20 hover:shadow-xl disabled:opacity-60"
             >
               {status === "sending" ? "Enviando..." : "Enviar mensaje"}
             </button>
 
             {status === "sent" && (
-              <p className="text-center text-green-600 font-medium">
+              <p className="text-center text-green-700 font-medium">
                 ¡Mensaje enviado! Nos pondremos en contacto pronto.
               </p>
             )}
@@ -755,19 +844,24 @@ function ContactForm() {
 
 function CTAFinal() {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-[#164f63] text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold">
+    <section className="relative overflow-hidden">
+      {/* Desert sunset gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#C2542D] via-[#E8805A] to-[#C9A96E]" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#3D2012]/20 blur-3xl" />
+
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-white">
           Profesionaliza a tu personal del hogar hoy
         </h2>
-        <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+        <p className="mt-5 text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
           Únete a las familias y empleadores que ya confían en CertiHogar para
           capacitar, certificar y conectar con personal del hogar calificado.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contacto"
-            className="w-full sm:w-auto bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-full text-lg transition shadow-lg"
+            className="w-full sm:w-auto bg-white text-terracotta hover:bg-white/90 font-semibold px-8 py-4 rounded-full text-lg transition shadow-lg"
           >
             Solicitar información
           </a>
@@ -775,7 +869,7 @@ function CTAFinal() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white font-semibold px-8 py-4 rounded-full text-lg transition border border-white/20"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-full text-lg transition border border-white/25"
           >
             <WhatsAppIcon />
             Hablar por WhatsApp
@@ -788,11 +882,11 @@ function CTAFinal() {
 
 function Footer() {
   return (
-    <footer className="bg-[#1E293B] text-white/80 py-12">
+    <footer className="bg-deep text-white/70 py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold text-white">CertiHogar</h3>
+            <h3 className="font-display text-xl font-bold text-white">CertiHogar</h3>
             <p className="mt-3 text-sm leading-relaxed">
               Capacitación y certificación de personal del hogar en Ciudad de
               México. Formación práctica, verificable y profesional.
@@ -802,25 +896,22 @@ function Footer() {
             <h4 className="font-semibold text-white mb-3">Navegación</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#beneficios" className="hover:text-white transition">
+                <a href="#beneficios" className="hover:text-peach transition">
                   Beneficios
                 </a>
               </li>
               <li>
-                <a
-                  href="#como-funciona"
-                  className="hover:text-white transition"
-                >
+                <a href="#como-funciona" className="hover:text-peach transition">
                   Cómo funciona
                 </a>
               </li>
               <li>
-                <a href="#capacitacion" className="hover:text-white transition">
-                  Capacitación
+                <a href="#certificacion" className="hover:text-peach transition">
+                  Certificación
                 </a>
               </li>
               <li>
-                <a href="#precios" className="hover:text-white transition">
+                <a href="#precios" className="hover:text-peach transition">
                   Precios
                 </a>
               </li>
@@ -841,7 +932,7 @@ function Footer() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-terracotta/50 flex items-center justify-center transition"
                 aria-label="WhatsApp"
               >
                 <WhatsAppIcon className="w-5 h-5" />
@@ -849,7 +940,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 pt-8 border-t border-white/10 text-center text-sm">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm">
           <p>
             &copy; {new Date().getFullYear()} CertiHogar. Todos los derechos
             reservados.
@@ -869,7 +960,7 @@ export default function Home() {
       <Hero />
       <Beneficios />
       <ComoFunciona />
-      <Capacitacion />
+      <Certificacion />
       <Precios />
       <Testimonios />
       <FAQ />

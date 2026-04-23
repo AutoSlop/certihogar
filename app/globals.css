@@ -1,12 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F7F4EE;
-  --foreground: #1E293B;
-  --primary: #1F6F8B;
-  --primary-dark: #185a70;
-  --secondary: #F2A65A;
-  --secondary-dark: #e0924a;
+  --background: #FDF8F3;
+  --foreground: #2D1B0E;
+  --primary: #C2542D;
+  --primary-dark: #A3421F;
+  --primary-light: #E8805A;
+  --secondary: #D4956A;
+  --secondary-dark: #B87A52;
+  --accent: #E6B87D;
+  --accent-light: #F2D4A7;
+  --sand: #F5EDE3;
+  --sand-dark: #E8DDD0;
+  --coral: #E89B7B;
+  --terracotta: #C2542D;
+  --peach: #F5C6A8;
+  --gold: #C9A96E;
+  --deep: #3D2012;
 }
 
 @theme inline {
@@ -14,9 +24,20 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
   --color-secondary-dark: var(--secondary-dark);
-  --font-sans: var(--font-geist-sans);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-sand: var(--sand);
+  --color-sand-dark: var(--sand-dark);
+  --color-coral: var(--coral);
+  --color-terracotta: var(--terracotta);
+  --color-peach: var(--peach);
+  --color-gold: var(--gold);
+  --color-deep: var(--deep);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-playfair);
 }
 
 body {
