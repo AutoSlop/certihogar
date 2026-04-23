@@ -1,25 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FBF6F0;
+  --background: #FDF8F3;
   --foreground: #2D1B0E;
-  --primary: #C2542D;
-  --primary-dark: #A3421F;
-  --primary-light: #E8805A;
+  --primary: #B84A28;
+  --primary-dark: #8E3318;
+  --primary-light: #D4714F;
   --secondary: #D4956A;
   --secondary-dark: #B87A52;
   --accent: #E6B87D;
   --accent-light: #F2D4A7;
-  --sand: #F3EBE0;
-  --sand-dark: #E0D5C7;
-  --coral: #E89B7B;
-  --terracotta: #C2542D;
-  --peach: #F5C6A8;
-  --gold: #C9A96E;
-  --deep: #2A1810;
-  --teal: #4A7C7E;
-  --teal-light: #6A9FA1;
-  --warm-white: #FFFCF8;
+  --sand: #F0E6D8;
+  --sand-dark: #D9CCBC;
+  --coral: #DF8E6E;
+  --terracotta: #B84A28;
+  --peach: #F2C3A4;
+  --gold: #C4A060;
+  --deep: #1E120A;
+  --teal: #3D6E6F;
+  --teal-light: #5A9193;
+  --warm-white: #FFFDF9;
+  --cream: #FAF0E4;
+  --sunset-rose: #D4725B;
+  --desert-blush: #E8A88C;
 }
 
 @theme inline {
@@ -42,8 +45,11 @@
   --color-teal: var(--teal);
   --color-teal-light: var(--teal-light);
   --color-warm-white: var(--warm-white);
+  --color-cream: var(--cream);
+  --color-sunset-rose: var(--sunset-rose);
+  --color-desert-blush: var(--desert-blush);
   --font-sans: var(--font-dm-sans);
-  --font-display: var(--font-playfair);
+  --font-display: var(--font-cormorant);
 }
 
 body {
@@ -60,7 +66,7 @@ html {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -75,32 +81,46 @@ html {
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-14px); }
 }
 
 @keyframes pulse-soft {
-  0%, 100% { opacity: 0.6; }
+  0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.7s ease-out both;
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.5s ease-out both;
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 7s ease-in-out infinite;
 }
 
 .animate-float-delayed {
-  animation: float 6s ease-in-out 2s infinite;
+  animation: float 7s ease-in-out 2.5s infinite;
 }
 
 .animate-pulse-soft {
-  animation: pulse-soft 3s ease-in-out infinite;
+  animation: pulse-soft 4s ease-in-out infinite;
 }
 
 .delay-100 { animation-delay: 0.1s; }
@@ -108,3 +128,10 @@ html {
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
 .delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Premium selection */
+::selection {
+  background: var(--peach);
+  color: var(--deep);
+}
