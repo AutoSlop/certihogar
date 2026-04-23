@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FDF8F3;
+  --background: #FBF6F0;
   --foreground: #2D1B0E;
-  --primary: #B84A28;
-  --primary-dark: #8E3318;
-  --primary-light: #D4714F;
+  --primary: #C4522A;
+  --primary-dark: #9C3D1C;
+  --primary-light: #D97B5A;
   --secondary: #D4956A;
   --secondary-dark: #B87A52;
   --accent: #E6B87D;
   --accent-light: #F2D4A7;
-  --sand: #F0E6D8;
+  --sand: #EFE5D6;
   --sand-dark: #D9CCBC;
   --coral: #DF8E6E;
-  --terracotta: #B84A28;
+  --terracotta: #C4522A;
   --peach: #F2C3A4;
   --gold: #C4A060;
   --deep: #1E120A;
@@ -23,6 +23,9 @@
   --cream: #FAF0E4;
   --sunset-rose: #D4725B;
   --desert-blush: #E8A88C;
+  --dusty-rose: #C98B7B;
+  --amber: #D9A44E;
+  --sage: #8BA58C;
 }
 
 @theme inline {
@@ -48,6 +51,9 @@
   --color-cream: var(--cream);
   --color-sunset-rose: var(--sunset-rose);
   --color-desert-blush: var(--desert-blush);
+  --color-dusty-rose: var(--dusty-rose);
+  --color-amber: var(--amber);
+  --color-sage: var(--sage);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-cormorant);
 }
@@ -99,6 +105,11 @@ html {
   to { opacity: 1; transform: scale(1); }
 }
 
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -123,6 +134,10 @@ html {
   animation: pulse-soft 4s ease-in-out infinite;
 }
 
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
@@ -134,4 +149,11 @@ html {
 ::selection {
   background: var(--peach);
   color: var(--deep);
+}
+
+/* Divider gradients */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--sand-dark), transparent);
+  opacity: 0.4;
 }
