@@ -61,27 +61,24 @@ function MapPinIcon({ className = "w-6 h-6" }: { className?: string }) {
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="sticky top-0 z-50 bg-[#FBF6F0]/80 backdrop-blur-2xl border-b border-[#D9CCBC]/30">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-[68px]">
-        <a href="#" className="flex items-center gap-2.5">
-          <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#C4522A] to-[#D97B5A] flex items-center justify-center shadow-sm shadow-[#C4522A]/15">
+    <nav className="sticky top-0 z-50 bg-[#FAF5ED]/85 backdrop-blur-2xl border-b border-[#D6CABB]/25">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 flex items-center justify-between h-[72px]">
+        <a href="#" className="flex items-center gap-2.5 group">
+          <span className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#BF4D28] to-[#D47A58] flex items-center justify-center shadow-md shadow-[#BF4D28]/20 group-hover:shadow-lg group-hover:shadow-[#BF4D28]/25 transition-shadow duration-300">
             <ShieldIcon className="w-[18px] h-[18px] text-white" />
           </span>
-          <span className="font-display text-[1.7rem] font-semibold text-deep tracking-tight">
+          <span className="font-display text-[1.75rem] font-bold text-deep tracking-tight">
             CertiHogar
           </span>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-7 text-[13px] font-medium tracking-wide text-foreground/45">
+        <div className="hidden md:flex items-center gap-8 text-[12.5px] font-semibold tracking-wide text-foreground/40 uppercase">
           <a href="#beneficios" className="hover:text-terracotta transition-colors duration-300">
             Beneficios
           </a>
           <a href="#como-funciona" className="hover:text-terracotta transition-colors duration-300">
             Proceso
-          </a>
-          <a href="#certificacion" className="hover:text-terracotta transition-colors duration-300">
-            Certificacion
           </a>
           <a href="#precios" className="hover:text-terracotta transition-colors duration-300">
             Precios
@@ -91,15 +88,15 @@ function Navbar() {
           </a>
           <a
             href="#contacto"
-            className="ml-1 bg-gradient-to-r from-deep to-[#3A241A] text-white px-6 py-2.5 rounded-full text-[13px] font-semibold hover:shadow-lg hover:shadow-deep/15 transition-all duration-300 hover:-translate-y-0.5"
+            className="ml-2 bg-gradient-to-r from-[#1C100A] to-[#3A241A] text-white px-7 py-2.5 rounded-full text-[12.5px] font-bold uppercase tracking-wide hover:shadow-lg hover:shadow-deep/20 transition-all duration-300 hover:-translate-y-0.5 normal-case"
           >
-            Contacto
+            Solicitar informacion
           </a>
         </div>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-sand/60 transition"
+          className="md:hidden p-2.5 rounded-xl hover:bg-sand/60 transition"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -115,20 +112,18 @@ function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-[#D9CCBC]/30 bg-[#FBF6F0]/98 backdrop-blur-2xl px-5 pb-5 pt-3 space-y-0.5 animate-fade-in">
+        <div className="md:hidden border-t border-[#D6CABB]/25 bg-[#FAF5ED]/98 backdrop-blur-2xl px-5 pb-6 pt-4 space-y-1 animate-fade-in">
           {[
             { href: "#beneficios", label: "Beneficios" },
             { href: "#como-funciona", label: "Como funciona" },
-            { href: "#certificacion", label: "Certificacion" },
             { href: "#precios", label: "Precios" },
             { href: "#testimonios", label: "Testimonios" },
-            { href: "#cobertura", label: "Cobertura" },
             { href: "#faq", label: "FAQ" },
           ].map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 px-4 text-foreground/60 font-medium rounded-xl hover:bg-sand/50 transition"
+              className="block py-3.5 px-4 text-foreground/55 font-medium rounded-xl hover:bg-sand/50 transition"
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -136,10 +131,10 @@ function Navbar() {
           ))}
           <a
             href="#contacto"
-            className="block bg-deep text-white text-center py-3 rounded-full font-semibold mt-3 shadow-sm"
+            className="block bg-deep text-white text-center py-3.5 rounded-full font-semibold mt-4 shadow-md"
             onClick={() => setOpen(false)}
           >
-            Contacto
+            Solicitar informacion
           </a>
         </div>
       )}
@@ -149,91 +144,127 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[92vh] flex items-center">
+    <section className="relative overflow-hidden min-h-[94vh] flex items-center">
       {/* Layered sunset gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F0D9C4] via-[#F7DBC4] to-[#FBF6F0]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#E8A88C]/30 via-transparent to-[#C4A060]/10" />
-      <div className="absolute top-0 left-0 right-0 h-[65%] bg-gradient-to-bl from-[#D4725B]/12 via-transparent to-[#3D6E6F]/6" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#EDDCC8] via-[#F2D8BF] to-[#FAF5ED]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#E4A48A]/25 via-transparent to-[#DBA65C]/10" />
+      <div className="absolute top-0 left-0 right-0 h-[70%] bg-gradient-to-bl from-[#CC6B54]/10 via-transparent to-[#2E5B5C]/5" />
 
       {/* Warm orbs */}
-      <div className="absolute top-12 right-[6%] w-[550px] h-[550px] rounded-full bg-gradient-to-br from-[#F2C3A4]/30 to-[#DF8E6E]/12 blur-[90px] animate-float" />
-      <div className="absolute bottom-20 left-[2%] w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#3D6E6F]/6 to-[#C4A060]/10 blur-[80px] animate-float-delayed" />
-      <div className="absolute top-[35%] right-[22%] w-56 h-56 rounded-full bg-[#E6B87D]/15 blur-[70px] animate-pulse-soft" />
-      <div className="absolute bottom-[25%] right-[10%] w-32 h-32 rounded-full bg-[#C98B7B]/20 blur-[50px]" />
+      <div className="absolute top-8 right-[4%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#F0BFA0]/25 to-[#DA8A6A]/10 blur-[100px] animate-float" />
+      <div className="absolute bottom-16 left-[1%] w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#2E5B5C]/5 to-[#DBA65C]/8 blur-[90px] animate-float-delayed" />
+      <div className="absolute top-[30%] right-[20%] w-64 h-64 rounded-full bg-[#DBA65C]/12 blur-[80px] animate-pulse-soft" />
+      <div className="absolute bottom-[20%] right-[8%] w-40 h-40 rounded-full bg-[#C0876E]/15 blur-[60px] animate-gentle-glow" />
 
-      {/* Decorative lines */}
-      <div className="absolute top-24 right-[16%] w-px h-48 bg-gradient-to-b from-[#C4522A]/12 to-transparent hidden lg:block" />
-      <div className="absolute top-32 right-[15%] w-px h-28 bg-gradient-to-b from-[#C4A060]/15 to-transparent hidden lg:block" />
+      {/* Grain */}
+      <div className="absolute inset-0 grain-overlay opacity-40" />
 
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 py-20 md:py-32">
-        <div className="max-w-[700px] animate-fade-in-up">
+      {/* Decorative arcs */}
+      <div className="absolute top-20 right-[14%] w-px h-56 bg-gradient-to-b from-[#BF4D28]/10 to-transparent hidden lg:block" />
+      <div className="absolute top-28 right-[13%] w-px h-36 bg-gradient-to-b from-[#DBA65C]/12 to-transparent hidden lg:block" />
+
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 py-24 md:py-36">
+        <div className="max-w-[680px] animate-fade-in-up">
           {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2.5 bg-white/55 backdrop-blur-md rounded-full px-5 py-2 mb-10 border border-white/40 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-teal animate-pulse-soft" />
-            <span className="text-[13px] font-semibold text-teal tracking-wide">
-              Capacitacion certificada en CDMX
+          <div className="inline-flex items-center gap-2.5 bg-white/50 backdrop-blur-lg rounded-full px-5 py-2.5 mb-12 border border-white/35 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#2E5B5C] animate-pulse-soft" />
+            <span className="text-[12.5px] font-bold text-[#2E5B5C] tracking-wide uppercase">
+              CDMX
             </span>
-            <span className="w-px h-3.5 bg-teal/20" />
-            <span className="text-[12px] text-teal/60 font-medium">Verificable</span>
+            <span className="w-px h-3.5 bg-[#2E5B5C]/15" />
+            <span className="text-[12px] text-[#2E5B5C]/55 font-semibold">Certificacion verificable</span>
           </div>
 
-          <h1 className="font-display text-[2.6rem] sm:text-[3.2rem] md:text-[3.8rem] lg:text-[4.6rem] font-semibold leading-[1.05] text-deep tracking-tight">
+          <h1 className="font-display text-[2.8rem] sm:text-[3.4rem] md:text-[4.2rem] lg:text-[5rem] font-bold leading-[1.02] text-deep tracking-tight">
             Capacita y certifica a tu{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 text-terracotta italic">personal del hogar</span>
-              <span className="absolute bottom-1.5 left-0 right-0 h-3 bg-gradient-to-r from-[#E6B87D]/30 to-[#F2C3A4]/25 -z-0 rounded-sm" />
+              <span className="relative z-10 text-[#BF4D28]" style={{ fontStyle: "italic" }}>personal del hogar</span>
+              <span className="absolute bottom-2 left-0 right-0 h-3.5 bg-gradient-to-r from-[#DBA65C]/25 to-[#F0BFA0]/20 -z-0 rounded-sm" />
             </span>{" "}
-            con respaldo practico
+            con mas confianza
           </h1>
 
-          <p className="mt-8 text-[16px] md:text-[17px] text-deep/50 max-w-[560px] leading-[1.75]">
-            En CertiHogar ayudamos a familias y empleadores de Ciudad de Mexico a
-            profesionalizar a su personal del hogar con formacion practica, evaluacion real
-            y acceso a una bolsa laboral de egresadas certificadas.
+          <p className="mt-9 text-[16.5px] md:text-[18px] text-deep/45 max-w-[540px] leading-[1.8] font-medium">
+            Formacion practica, evaluacion real y certificacion verificable para
+            familias y empleadores en Ciudad de Mexico.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row items-start gap-3.5">
+          <div className="mt-11 flex flex-col sm:flex-row items-start gap-4">
             <a
               href="#contacto"
-              className="w-full sm:w-auto group bg-gradient-to-r from-deep to-[#3A241A] hover:from-[#3A241A] hover:to-deep text-white font-semibold px-9 py-4 rounded-full text-[15px] transition-all duration-400 shadow-lg shadow-deep/12 hover:shadow-xl hover:shadow-deep/18 hover:-translate-y-0.5 flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto group bg-gradient-to-r from-[#1C100A] to-[#3A241A] hover:from-[#3A241A] hover:to-[#1C100A] text-white font-bold px-10 py-[18px] rounded-full text-[15px] transition-all duration-400 shadow-xl shadow-deep/15 hover:shadow-2xl hover:shadow-deep/22 hover:-translate-y-1 flex items-center justify-center gap-3"
             >
               Solicitar informacion
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>
             </a>
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-white/55 hover:bg-white/75 backdrop-blur-md text-deep font-medium px-8 py-4 rounded-full text-[15px] transition-all duration-300 border border-white/40 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              href="#como-funciona"
+              className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-white/50 hover:bg-white/70 backdrop-blur-lg text-deep font-semibold px-8 py-[18px] rounded-full text-[15px] transition-all duration-300 border border-white/35 shadow-sm hover:shadow-lg hover:-translate-y-0.5"
             >
-              <WhatsAppIcon className="w-[18px] h-[18px] text-green-600" />
-              Hablar por WhatsApp
+              <svg className="w-4.5 h-4.5 text-[#BF4D28]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+              Ver como funciona
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          {/* Trust metrics */}
-          <div className="mt-16 flex flex-wrap items-center gap-6 sm:gap-10 animate-fade-in-up delay-400">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-teal/8 flex items-center justify-center">
-                <ShieldIcon className="w-[16px] h-[16px] text-teal/70" />
+function FranjaConfianza() {
+  const items = [
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.331 0 4.512.645 6.374 1.766m0-13.724A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.534v14.534" />
+        </svg>
+      ),
+      label: "Capacitacion practica",
+      color: "text-[#BF4D28]",
+      bg: "bg-[#BF4D28]/8",
+    },
+    {
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+        </svg>
+      ),
+      label: "Evaluacion real",
+      color: "text-[#C4A060]",
+      bg: "bg-[#C4A060]/8",
+    },
+    {
+      icon: <ShieldIcon className="w-5 h-5" />,
+      label: "Certificado verificable",
+      color: "text-[#2E5B5C]",
+      bg: "bg-[#2E5B5C]/6",
+    },
+    {
+      icon: <UsersIcon className="w-5 h-5" />,
+      label: "Bolsa laboral basica",
+      color: "text-[#DA8A6A]",
+      bg: "bg-[#DA8A6A]/8",
+    },
+  ];
+
+  return (
+    <section className="relative py-8 sm:py-10 bg-white/60 backdrop-blur-sm border-y border-[#D6CABB]/20">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12">
+          {items.map((item) => (
+            <div key={item.label} className="flex items-center gap-3">
+              <div className={`w-10 h-10 rounded-xl ${item.bg} flex items-center justify-center`}>
+                <span className={item.color}>{item.icon}</span>
               </div>
-              <span className="text-[12px] font-semibold text-deep/35 tracking-wide uppercase">Certificacion verificable</span>
+              <span className="text-[13px] font-bold text-deep/50 tracking-tight">
+                {item.label}
+              </span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center">
-                <StarIcon className="w-[16px] h-[16px] text-gold/80" />
-              </div>
-              <span className="text-[12px] font-semibold text-deep/35 tracking-wide uppercase">Evaluacion practica</span>
-            </div>
-            <div className="hidden sm:flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-coral/8 flex items-center justify-center">
-                <UsersIcon className="w-[16px] h-[16px] text-coral/70" />
-              </div>
-              <span className="text-[12px] font-semibold text-deep/35 tracking-wide uppercase">Bolsa laboral</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -243,167 +274,82 @@ function Hero() {
 function PropuestaValor() {
   const cards = [
     {
+      title: "Reduce el riesgo al contratar",
+      desc: "Cada egresada tiene un certificado digital con QR verificable. Antes de contratar, confirma las competencias reales de cualquier candidata.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        </svg>
+      ),
+      accent: "from-[#2E5B5C]",
+      badge: "Evaluacion practica",
+    },
+    {
+      title: "Formacion integral y comprobable",
+      desc: "Limpieza, organizacion, cocina basica, manejo de productos y protocolos de seguridad. No solo teoria: evaluacion con checklist en escenarios reales.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.331 0 4.512.645 6.374 1.766m0-13.724A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.534v14.534" />
         </svg>
       ),
-      title: "Capacitacion practica",
-      desc: "Formacion integral que cubre limpieza, organizacion, cocina basica y protocolos de seguridad en el hogar.",
-      accent: "text-terracotta",
-      bg: "bg-gradient-to-br from-terracotta/8 to-terracotta/4",
-      border: "border-terracotta/10",
+      accent: "from-[#BF4D28]",
+      badge: "Certificacion verificable",
     },
     {
+      title: "Conecta con personal certificado",
+      desc: "Nuestra bolsa laboral basica te da acceso a egresadas con competencias verificadas, perfil profesional y evaluacion aprobada.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
         </svg>
       ),
-      title: "Evaluacion con checklist",
-      desc: "Evaluacion en escenarios reales con checklist detallado. No solo teoria: competencia demostrable.",
-      accent: "text-gold",
-      bg: "bg-gradient-to-br from-gold/10 to-gold/4",
-      border: "border-gold/10",
-    },
-    {
-      icon: <ShieldIcon className="w-6 h-6" />,
-      title: "Certificado digital verificable",
-      desc: "Codigo QR unico que cualquier empleador puede escanear para verificar autenticidad al instante.",
-      accent: "text-teal",
-      bg: "bg-gradient-to-br from-teal/8 to-teal/3",
-      border: "border-teal/10",
-    },
-    {
-      icon: <UsersIcon className="w-6 h-6" />,
-      title: "Bolsa laboral basica",
-      desc: "Conectamos familias y empleadores con personal certificado a traves de nuestra plataforma activa.",
-      accent: "text-coral",
-      bg: "bg-gradient-to-br from-coral/8 to-coral/3",
-      border: "border-coral/10",
+      accent: "from-[#C4A060]",
+      badge: "CDMX",
     },
   ];
 
   return (
-    <section id="beneficios" className="py-28 sm:py-32 bg-warm-white relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full bg-gradient-to-b from-peach/6 to-transparent blur-3xl pointer-events-none" />
+    <section id="beneficios" className="py-28 sm:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5ED] via-cream to-[#FAF5ED]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gradient-to-b from-peach/5 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-teal/65 mb-5">
-            Propuesta de valor
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#2E5B5C]/55 mb-5">
+            Por que CertiHogar
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
-            Por que elegir CertiHogar
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
+            Contrata y profesionaliza con mas respaldo
           </h2>
-          <p className="mt-5 text-foreground/40 text-[15px] leading-relaxed max-w-lg mx-auto">
-            Un proceso integral de capacitacion, evaluacion practica y certificacion
-            que eleva el estandar del trabajo del hogar.
+          <p className="mt-6 text-foreground/38 text-[15.5px] leading-[1.75] max-w-lg mx-auto">
+            CertiHogar reduce el riesgo de contratar personal no verificado.
+            Capacitamos, evaluamos y certificamos con respaldo comprobable.
           </p>
         </div>
 
-        <div className="mt-16 sm:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="mt-18 sm:mt-24 grid md:grid-cols-3 gap-5 sm:gap-6">
           {cards.map((c) => (
             <div
               key={c.title}
-              className={`group bg-white rounded-2xl p-6 sm:p-7 border ${c.border} hover:border-sand-dark/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5`}
+              className="group relative bg-white rounded-3xl p-8 sm:p-9 border border-[#D6CABB]/25 hover:border-[#D6CABB]/50 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              <div className={`w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-500`}>
-                <span className={c.accent}>{c.icon}</span>
+              {/* Badge */}
+              <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-widest text-deep/30 bg-sand/50 rounded-full px-3.5 py-1.5 mb-7">
+                {c.badge}
+              </span>
+
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${c.accent} to-transparent/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                <span className="text-white">{c.icon}</span>
               </div>
-              <h3 className="text-[16px] font-bold text-deep mb-2.5 tracking-tight leading-snug">
+
+              <h3 className="text-[18px] font-bold text-deep mb-3 tracking-tight leading-snug">
                 {c.title}
               </h3>
-              <p className="text-[13.5px] text-foreground/42 leading-relaxed">
+              <p className="text-[14px] text-foreground/40 leading-[1.75]">
                 {c.desc}
               </p>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BeneficiosFamilias() {
-  const benefits = [
-    {
-      icon: <ShieldIcon className="w-5 h-5" />,
-      title: "Contrata con mas confianza",
-      desc: "Verifica las competencias de tu personal con certificados digitales autenticos y escaneables.",
-    },
-    {
-      icon: <StarIcon className="w-5 h-5" />,
-      title: "Profesionaliza a tu personal actual",
-      desc: "Tu empleada o empleado del hogar adquiere nuevas habilidades y mejora su desempeno con formacion estructurada.",
-    },
-    {
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-        </svg>
-      ),
-      title: "Reduce riesgos en tu hogar",
-      desc: "Personal capacitado en protocolos de seguridad, manejo de productos y cuidado del espacio domestico.",
-    },
-    {
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-        </svg>
-      ),
-      title: "Mejora los estandares del hogar",
-      desc: "Un hogar mas organizado, limpio y seguro con personal que sigue estandares profesionales claros.",
-    },
-  ];
-
-  return (
-    <section className="py-28 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-cream via-[#FBF6F0] to-sand/30" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[300px] rounded-full bg-gradient-to-tl from-peach/8 to-transparent blur-3xl pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left side */}
-          <div>
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-terracotta/65 mb-5">
-              Para familias y empleadores
-            </p>
-            <h2 className="font-display text-[2rem] md:text-[2.6rem] lg:text-[3rem] font-semibold text-deep leading-[1.08] tracking-tight">
-              Beneficios que transforman tu hogar
-            </h2>
-            <p className="mt-5 text-foreground/40 text-[15px] leading-relaxed max-w-md">
-              CertiHogar te da las herramientas para contratar y gestionar personal del hogar
-              con mayor confianza, profesionalismo y tranquilidad.
-            </p>
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-2 mt-8 text-terracotta font-semibold text-[14px] hover:gap-3 transition-all duration-300 group"
-            >
-              Conoce mas
-              <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Right side - benefit cards */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {benefits.map((b, i) => (
-              <div
-                key={b.title}
-                className={`group bg-white rounded-2xl p-6 border border-sand-dark/20 hover:border-sand-dark/40 shadow-sm hover:shadow-lg transition-all duration-500 hover:-translate-y-1 ${
-                  i === 0 ? "sm:translate-y-0" : i === 1 ? "sm:translate-y-4" : i === 2 ? "sm:translate-y-0" : "sm:translate-y-4"
-                }`}
-              >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-terracotta/8 to-coral/6 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                  <span className="text-terracotta">{b.icon}</span>
-                </div>
-                <h3 className="text-[15px] font-bold text-deep mb-2 tracking-tight">{b.title}</h3>
-                <p className="text-[13px] text-foreground/40 leading-relaxed">{b.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -415,9 +361,9 @@ function ComoFunciona() {
     {
       num: "01",
       title: "Solicitas informacion",
-      desc: "Llena el formulario o escribenos por WhatsApp. Te explicamos todo el proceso y resolvemos tus dudas.",
+      desc: "Completa el formulario o escribenos por WhatsApp. Resolvemos dudas y explicamos el proceso.",
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <svg className="w-5.5 h-5.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
         </svg>
       ),
@@ -425,9 +371,9 @@ function ComoFunciona() {
     {
       num: "02",
       title: "Inscripcion a capacitacion",
-      desc: "Selecciona el paquete adecuado e inscribe a tu personal. Sesiones teoricas y practicas flexibles.",
+      desc: "Elige paquete e inscribe a tu personal. Sesiones teoricas y practicas flexibles que se adaptan a su horario.",
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <svg className="w-5.5 h-5.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
         </svg>
       ),
@@ -435,9 +381,9 @@ function ComoFunciona() {
     {
       num: "03",
       title: "Evaluacion y certificacion",
-      desc: "Evaluacion practica con checklist detallado en escenarios reales. Certificado digital con QR verificable.",
+      desc: "Evaluacion practica con checklist detallado. Certificado digital con codigo QR verificable por cualquier empleador.",
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <svg className="w-5.5 h-5.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
         </svg>
       ),
@@ -445,60 +391,57 @@ function ComoFunciona() {
     {
       num: "04",
       title: "Acceso a bolsa laboral",
-      desc: "Perfil profesional de egresada y acceso a nuestra bolsa laboral para conectar con familias que buscan personal.",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-        </svg>
-      ),
+      desc: "Perfil profesional de egresada en nuestra bolsa laboral para conectar con familias que buscan personal.",
+      icon: <StarIcon className="w-5.5 h-5.5" />,
     },
   ];
 
   return (
-    <section id="como-funciona" className="py-28 sm:py-32 bg-warm-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-peach/8 to-transparent blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-teal/4 to-transparent blur-3xl pointer-events-none" />
+    <section id="como-funciona" className="py-28 sm:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-warm-white via-[#FAF5ED] to-cream/50" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-peach/6 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#2E5B5C]/3 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-terracotta/65 mb-5">
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#BF4D28]/50 mb-5">
             Proceso simple
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
             Como funciona
           </h2>
-          <p className="mt-5 text-foreground/40 text-[15px]">
-            Un proceso transparente en 4 pasos para profesionalizar a tu personal.
+          <p className="mt-6 text-foreground/38 text-[15.5px]">
+            Cuatro pasos para profesionalizar a tu personal del hogar.
           </p>
         </div>
 
-        <div className="mt-16 sm:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4">
+        <div className="mt-18 sm:mt-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-4">
           {steps.map((s, i) => (
             <div key={s.num} className="relative group">
-              {/* Connector line */}
+              {/* Connector */}
               {i < 3 && (
-                <div className="hidden lg:block absolute top-10 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px">
-                  <div className="w-full h-full bg-gradient-to-r from-sand-dark/35 to-sand-dark/15" />
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-sand-dark/35" />
+                <div className="hidden lg:block absolute top-12 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-px">
+                  <div className="w-full h-full bg-gradient-to-r from-[#D6CABB]/40 to-[#D6CABB]/15" />
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#D6CABB]/40" />
                 </div>
               )}
 
-              <div className="bg-white rounded-2xl p-7 text-center border border-sand-dark/20 hover:border-terracotta/20 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5">
+              <div className="bg-white rounded-3xl p-8 text-center border border-[#D6CABB]/20 hover:border-[#BF4D28]/15 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                 {/* Step circle */}
-                <div className="relative mx-auto w-16 h-16 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#C4522A]/6 to-[#D97B5A]/6 group-hover:from-[#C4522A]/12 group-hover:to-[#D97B5A]/12 transition-colors duration-500" />
-                  <div className="absolute inset-1.5 rounded-full bg-gradient-to-br from-[#C4522A] to-[#D97B5A] flex items-center justify-center shadow-md shadow-terracotta/15">
+                <div className="relative mx-auto w-20 h-20 mb-7">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#BF4D28]/5 to-[#D47A58]/5 group-hover:from-[#BF4D28]/12 group-hover:to-[#D47A58]/12 transition-colors duration-500" />
+                  <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#BF4D28] to-[#D47A58] flex items-center justify-center shadow-lg shadow-[#BF4D28]/15">
                     <span className="text-white">{s.icon}</span>
                   </div>
-                  <span className="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-cream border-2 border-white flex items-center justify-center text-[11px] font-bold text-terracotta/80 shadow-sm">
+                  <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-cream border-2 border-white flex items-center justify-center text-[11px] font-extrabold text-[#BF4D28]/70 shadow-sm">
                     {s.num}
                   </span>
                 </div>
 
-                <h3 className="text-[16px] font-bold text-deep mb-2.5 tracking-tight">
+                <h3 className="text-[16.5px] font-bold text-deep mb-3 tracking-tight">
                   {s.title}
                 </h3>
-                <p className="text-[13.5px] text-foreground/40 leading-relaxed">
+                <p className="text-[13.5px] text-foreground/38 leading-[1.7]">
                   {s.desc}
                 </p>
               </div>
@@ -507,13 +450,13 @@ function ComoFunciona() {
         </div>
 
         {/* CTA */}
-        <div className="mt-14 text-center">
+        <div className="mt-16 text-center">
           <a
             href="#contacto"
-            className="inline-flex items-center gap-2 text-terracotta font-semibold text-[14px] hover:gap-3 transition-all duration-300 group"
+            className="inline-flex items-center gap-2.5 text-[#BF4D28] font-bold text-[14.5px] hover:gap-3.5 transition-all duration-300 group"
           >
             Comienza tu proceso hoy
-            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
@@ -523,102 +466,127 @@ function ComoFunciona() {
   );
 }
 
-function Certificacion() {
-  const features = [
+function Beneficios() {
+  const familias = [
     {
-      title: "Curso base de trabajo del hogar",
-      desc: "Formacion integral que cubre limpieza, organizacion, cocina basica, manejo de productos y protocolos de seguridad.",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.331 0 4.512.645 6.374 1.766m0-13.724A8.966 8.966 0 0118 3.75c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.534v14.534" />
-        </svg>
-      ),
+      icon: <ShieldIcon className="w-5 h-5" />,
+      title: "Contrata con confianza",
+      desc: "Verifica competencias con certificados digitales escaneables antes de contratar.",
     },
     {
-      title: "Evaluacion practica con checklist",
-      desc: "Evaluacion en escenarios reales con un checklist detallado para garantizar competencia demostrable.",
-      icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-        </svg>
-      ),
+      icon: <StarIcon className="w-5 h-5" />,
+      title: "Profesionaliza a tu personal actual",
+      desc: "Tu personal adquiere habilidades y mejora su desempeno con formacion estructurada.",
     },
     {
-      title: "Certificado digital verificable",
-      desc: "Certificado digital con codigo QR unico que cualquier empleador puede escanear para verificar autenticidad.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
         </svg>
       ),
-      highlight: true,
+      title: "Reduce riesgos",
+      desc: "Personal capacitado en protocolos de seguridad, manejo de productos y cuidado del hogar.",
     },
+  ];
+
+  const trabajadoras = [
     {
-      title: "Perfil laboral de egresada",
-      desc: "Cada egresada certificada obtiene un perfil profesional con sus competencias y certificacion visible.",
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
         </svg>
       ),
+      title: "Certificacion profesional",
+      desc: "Obtiene un certificado digital verificable que la distingue en el mercado laboral.",
     },
     {
-      title: "Bolsa laboral basica",
-      desc: "Conectamos a familias y empleadores con egresadas certificadas a traves de nuestra plataforma.",
+      icon: <UsersIcon className="w-5 h-5" />,
+      title: "Acceso a bolsa laboral",
+      desc: "Perfil profesional y acceso a familias que buscan personal certificado en CDMX.",
+    },
+    {
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
         </svg>
       ),
+      title: "Mejores oportunidades",
+      desc: "Formacion que eleva su perfil y le permite acceder a mejores condiciones laborales.",
     },
   ];
 
   return (
-    <section id="certificacion" className="py-28 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-cream/60 via-[#FBF6F0] to-sand/40" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[250px] rounded-full bg-gradient-to-tr from-teal/4 to-transparent blur-3xl pointer-events-none" />
+    <section className="py-28 sm:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/60 via-[#FAF5ED] to-warm-white" />
+      <div className="absolute bottom-0 right-0 w-[450px] h-[350px] rounded-full bg-gradient-to-tl from-peach/6 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[350px] h-[280px] rounded-full bg-gradient-to-br from-[#2E5B5C]/3 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-gold/75 mb-5">
-            Programa completo
+        <div className="text-center max-w-2xl mx-auto mb-18 sm:mb-24">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#DA8A6A]/60 mb-5">
+            Beneficios
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
-            Capacitacion y certificacion
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
+            Para todos los involucrados
           </h2>
-          <p className="mt-5 text-foreground/40 text-[15px] leading-relaxed max-w-lg mx-auto">
-            Nuestro programa incluye todo lo necesario para profesionalizar al
-            personal del hogar con respaldo verificable.
-          </p>
         </div>
 
-        <div className="mt-16 sm:mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className={`group rounded-2xl p-7 transition-all duration-500 hover:-translate-y-1.5 ${
-                f.highlight
-                  ? "bg-gradient-to-br from-[#3D6E6F] to-[#2D5556] text-white shadow-xl shadow-teal/10 sm:col-span-2 lg:col-span-1 ring-1 ring-teal/10"
-                  : "bg-white border border-sand-dark/20 hover:border-sand-dark/40 shadow-sm hover:shadow-xl"
-              }`}
-            >
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-transform duration-500 group-hover:scale-110 ${
-                f.highlight
-                  ? "bg-white/10"
-                  : "bg-gradient-to-br from-sand/70 to-sand/40"
-              }`}>
-                <span className={f.highlight ? "text-white" : "text-terracotta"}>
-                  {f.icon}
-                </span>
-              </div>
-              <h3 className={`text-[15px] font-bold mb-2 tracking-tight ${f.highlight ? "text-white" : "text-deep"}`}>
-                {f.title}
-              </h3>
-              <p className={`text-[13.5px] leading-relaxed ${f.highlight ? "text-white/65" : "text-foreground/40"}`}>
-                {f.desc}
-              </p>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+          {/* Familias */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BF4D28]/10 to-[#DA8A6A]/8 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#BF4D28]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </span>
+              <h3 className="text-[18px] font-bold text-deep tracking-tight">Para familias y empleadores</h3>
             </div>
-          ))}
+            <div className="space-y-4">
+              {familias.map((b) => (
+                <div
+                  key={b.title}
+                  className="group bg-white rounded-2xl p-6 border border-[#D6CABB]/20 hover:border-[#D6CABB]/45 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex gap-5"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#BF4D28]/8 to-[#DA8A6A]/5 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <span className="text-[#BF4D28]">{b.icon}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-[15px] font-bold text-deep mb-1.5 tracking-tight">{b.title}</h4>
+                    <p className="text-[13.5px] text-foreground/38 leading-relaxed">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Trabajadoras */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#2E5B5C]/8 to-[#4D8283]/6 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#2E5B5C]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+              </span>
+              <h3 className="text-[18px] font-bold text-deep tracking-tight">Para trabajadoras certificadas</h3>
+            </div>
+            <div className="space-y-4">
+              {trabajadoras.map((b) => (
+                <div
+                  key={b.title}
+                  className="group bg-white rounded-2xl p-6 border border-[#D6CABB]/20 hover:border-[#D6CABB]/45 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 flex gap-5"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#2E5B5C]/6 to-[#4D8283]/4 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <span className="text-[#2E5B5C]">{b.icon}</span>
+                  </div>
+                  <div>
+                    <h4 className="text-[15px] font-bold text-deep mb-1.5 tracking-tight">{b.title}</h4>
+                    <p className="text-[13.5px] text-foreground/38 leading-relaxed">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -632,80 +600,80 @@ function Testimonios() {
       role: "Empleadora en Polanco",
       text: "Desde que mi empleada completo la certificacion de CertiHogar, la organizacion y limpieza en casa mejoraron notablemente. El certificado me da confianza total.",
       initials: "MG",
-      accent: "from-terracotta/15 to-coral/10",
+      accent: "from-[#BF4D28]/12 to-[#DA8A6A]/8",
     },
     {
       name: "Lupita R.",
       role: "Egresada certificada",
       text: "El curso me dio herramientas que no conocia. Ahora tengo mi certificado y consegui un mejor empleo gracias a la bolsa laboral. Se los recomiendo.",
       initials: "LR",
-      accent: "from-teal/12 to-teal-light/8",
+      accent: "from-[#2E5B5C]/10 to-[#4D8283]/6",
     },
     {
       name: "Roberto M.",
       role: "Pequena agencia de servicios",
       text: "Certificar a nuestro equipo nos diferencio de la competencia. Los clientes valoran mucho que presentemos personal con certificacion verificable.",
       initials: "RM",
-      accent: "from-gold/15 to-amber/10",
+      accent: "from-[#C4A060]/12 to-[#D49A48]/8",
     },
   ];
 
   return (
-    <section id="testimonios" className="py-28 sm:py-32 bg-warm-white relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] rounded-full bg-gradient-to-b from-peach/5 to-transparent blur-3xl pointer-events-none" />
+    <section id="testimonios" className="py-28 sm:py-36 bg-warm-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gradient-to-b from-peach/4 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-coral/65 mb-5">
-            Testimonios
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#DA8A6A]/55 mb-5">
+            Prueba social
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
-            Lo que dicen nuestros clientes
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
+            Lo que dicen de nosotros
           </h2>
         </div>
 
         {/* Trust badges */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-foreground/30 text-[13px]">
-          <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-sand-dark/20 shadow-sm">
-            <ShieldIcon className="w-3.5 h-3.5 text-teal/60" />
-            <span className="font-medium text-foreground/40 text-[12px]">Certificacion verificable</span>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 border border-[#D6CABB]/20 shadow-sm">
+            <ShieldIcon className="w-3.5 h-3.5 text-[#2E5B5C]/60" />
+            <span className="font-semibold text-foreground/35 text-[11.5px]">Certificacion verificable</span>
           </div>
-          <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-sand-dark/20 shadow-sm">
-            <StarIcon className="w-3.5 h-3.5 text-gold/70" />
-            <span className="font-medium text-foreground/40 text-[12px]">Evaluacion real</span>
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 border border-[#D6CABB]/20 shadow-sm">
+            <StarIcon className="w-3.5 h-3.5 text-[#C4A060]/70" />
+            <span className="font-semibold text-foreground/35 text-[11.5px]">Evaluacion practica</span>
           </div>
-          <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 border border-sand-dark/20 shadow-sm">
-            <UsersIcon className="w-3.5 h-3.5 text-coral/60" />
-            <span className="font-medium text-foreground/40 text-[12px]">Bolsa laboral activa</span>
+          <div className="flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 border border-[#D6CABB]/20 shadow-sm">
+            <MapPinIcon className="w-3.5 h-3.5 text-[#BF4D28]/55" />
+            <span className="font-semibold text-foreground/35 text-[11.5px]">CDMX</span>
           </div>
         </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-5">
+        <div className="mt-14 grid md:grid-cols-3 gap-5 sm:gap-6">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="group bg-white rounded-2xl p-7 border border-sand-dark/20 hover:border-sand-dark/40 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1.5"
+              className="group bg-white rounded-3xl p-8 border border-[#D6CABB]/20 hover:border-[#D6CABB]/45 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Stars */}
-              <div className="flex gap-0.5 mb-5">
+              <div className="flex gap-0.5 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} className="w-4.5 h-4.5 text-[#C4A060]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
               </div>
 
-              <p className="text-[14px] text-foreground/50 leading-[1.75] italic">
+              <p className="text-[14.5px] text-foreground/48 leading-[1.8]" style={{ fontStyle: "italic" }}>
                 &ldquo;{t.text}&rdquo;
               </p>
 
-              <div className="mt-6 pt-5 border-t border-sand-dark/20 flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.accent} flex items-center justify-center text-deep/50 text-[11px] font-bold`}>
+              <div className="mt-7 pt-6 border-t border-[#D6CABB]/15 flex items-center gap-3.5">
+                <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.accent} flex items-center justify-center text-deep/45 text-[12px] font-bold`}>
                   {t.initials}
                 </div>
                 <div>
-                  <p className="font-bold text-deep text-[13px]">{t.name}</p>
-                  <p className="text-[11px] text-foreground/35">{t.role}</p>
+                  <p className="font-bold text-deep text-[13.5px]">{t.name}</p>
+                  <p className="text-[11.5px] text-foreground/32">{t.role}</p>
                 </div>
               </div>
             </div>
@@ -776,64 +744,68 @@ function Precios() {
   ];
 
   return (
-    <section id="precios" className="py-28 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-cream/50 via-[#FBF6F0] to-[#F2C3A4]/8" />
-      <div className="absolute top-0 right-0 w-[500px] h-[350px] rounded-full bg-gradient-to-bl from-coral/5 to-transparent blur-3xl pointer-events-none" />
+    <section id="precios" className="py-28 sm:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-cream/50 via-[#FAF5ED] to-[#F0BFA0]/6" />
+      <div className="absolute top-0 right-0 w-[550px] h-[400px] rounded-full bg-gradient-to-bl from-[#DA8A6A]/4 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="text-center max-w-xl mx-auto">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-terracotta/65 mb-5">
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#BF4D28]/45 mb-5">
             Inversion
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
             Paquetes y precios
           </h2>
-          <p className="mt-5 text-foreground/40 text-[15px]">
-            Planes disenados para familias, empleadores particulares y pequenas agencias.
+          <p className="mt-6 text-foreground/38 text-[15.5px]">
+            Planes para familias, empleadores particulares y pequenas agencias.
           </p>
         </div>
 
-        <div className="mt-16 sm:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="mt-18 sm:mt-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {plans.map((p) => (
             <div
               key={p.name}
-              className={`relative rounded-2xl p-6 flex flex-col transition-all duration-500 hover:-translate-y-1.5 ${
+              className={`relative rounded-3xl p-7 sm:p-8 flex flex-col transition-all duration-500 hover:-translate-y-2 ${
                 p.popular
-                  ? "bg-gradient-to-b from-deep to-[#2A1810] text-white shadow-2xl shadow-deep/25 ring-1 ring-white/5 scale-[1.02] z-10"
-                  : "bg-white border border-sand-dark/20 hover:border-sand-dark/40 shadow-sm hover:shadow-xl"
+                  ? "bg-gradient-to-b from-[#1C100A] to-[#2A1810] text-white shadow-2xl shadow-deep/30 ring-1 ring-white/5 scale-[1.03] z-10"
+                  : "bg-white border border-[#D6CABB]/20 hover:border-[#D6CABB]/45 shadow-sm hover:shadow-2xl"
               }`}
             >
               {p.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#E6B87D] to-[#D9A44E] text-deep text-[11px] font-bold px-5 py-1.5 rounded-full shadow-lg shadow-gold/20">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#DBA65C] to-[#D49A48] text-deep text-[10.5px] font-extrabold px-5 py-1.5 rounded-full shadow-lg shadow-[#C4A060]/25 uppercase tracking-wider">
                   Mas popular
                 </span>
               )}
-              <div className="mb-4">
-                <h3 className={`text-[15px] font-bold ${p.popular ? "text-white" : "text-deep"}`}>
+
+              <div className="mb-5">
+                <h3 className={`text-[16px] font-bold ${p.popular ? "text-white" : "text-deep"}`}>
                   {p.name}
                 </h3>
-                <p className={`text-[13px] mt-0.5 ${p.popular ? "text-white/40" : "text-foreground/30"}`}>{p.desc}</p>
+                <p className={`text-[13px] mt-1 ${p.popular ? "text-white/35" : "text-foreground/28"}`}>{p.desc}</p>
               </div>
-              <div className="mb-5 pb-5 border-b border-dashed" style={{ borderColor: p.popular ? "rgba(255,255,255,0.10)" : "rgba(217,204,188,0.4)" }}>
-                <span className={`text-[2rem] font-bold tracking-tight ${p.popular ? "text-white" : "text-deep"}`}>
+
+              <div className="mb-6 pb-6 border-b border-dashed" style={{ borderColor: p.popular ? "rgba(255,255,255,0.08)" : "rgba(214,202,187,0.35)" }}>
+                <span className={`text-[2.1rem] font-bold tracking-tight ${p.popular ? "text-white" : "text-deep"}`}>
                   {p.price}
                 </span>
-                <span className={`text-[13px] ml-1.5 ${p.popular ? "text-white/35" : "text-foreground/25"}`}>{p.unit}</span>
+                <span className={`text-[13px] ml-1.5 ${p.popular ? "text-white/30" : "text-foreground/22"}`}>{p.unit}</span>
               </div>
-              <ul className="space-y-3 flex-1">
+
+              <ul className="space-y-3.5 flex-1">
                 {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-[13px]">
-                    <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${p.popular ? "text-white/45" : "text-teal/55"}`} />
-                    <span className={p.popular ? "text-white/65" : "text-foreground/45"}>{f}</span>
+                  <li key={f} className="flex items-start gap-2.5 text-[13.5px]">
+                    <CheckCircle className={`w-4 h-4 flex-shrink-0 mt-0.5 ${p.popular ? "text-white/40" : "text-[#2E5B5C]/50"}`} />
+                    <span className={p.popular ? "text-white/60" : "text-foreground/42"}>{f}</span>
                   </li>
                 ))}
               </ul>
+
               <a
                 href="#contacto"
-                className={`mt-7 block text-center py-3 rounded-full font-semibold text-[14px] transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`mt-8 block text-center py-3.5 rounded-full font-bold text-[14px] transition-all duration-300 hover:-translate-y-0.5 ${
                   p.popular
                     ? "bg-white text-deep hover:bg-white/90 shadow-lg"
-                    : "bg-gradient-to-r from-sand/70 to-sand/50 text-deep hover:from-sand hover:to-sand/70"
+                    : "bg-gradient-to-r from-sand/70 to-sand/45 text-deep hover:from-sand hover:to-sand/65"
                 }`}
               >
                 Solicitar informacion
@@ -843,85 +815,17 @@ function Precios() {
         </div>
 
         {/* Additional services */}
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <div className="bg-white rounded-2xl px-7 py-5 border border-sand-dark/20 shadow-sm text-center hover:shadow-md transition-shadow duration-300">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-foreground/25">Recertificacion</span>
-            <p className="text-xl font-bold text-deep mt-1.5">$590 <span className="text-[13px] font-normal text-foreground/25">MXN</span></p>
+        <div className="mt-14 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="bg-white rounded-2xl px-8 py-6 border border-[#D6CABB]/20 shadow-sm text-center hover:shadow-lg transition-shadow duration-300">
+            <span className="text-[10.5px] font-extrabold uppercase tracking-[0.15em] text-foreground/22">Recertificacion</span>
+            <p className="text-xl font-bold text-deep mt-2">$590 <span className="text-[13px] font-normal text-foreground/22">MXN</span></p>
           </div>
-          <div className="bg-white rounded-2xl px-7 py-5 border border-sand-dark/20 shadow-sm text-center hover:shadow-md transition-shadow duration-300">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-foreground/25">
+          <div className="bg-white rounded-2xl px-8 py-6 border border-[#D6CABB]/20 shadow-sm text-center hover:shadow-lg transition-shadow duration-300">
+            <span className="text-[10.5px] font-extrabold uppercase tracking-[0.15em] text-foreground/22">
               Acceso a bolsa laboral (sin paquete)
             </span>
-            <p className="text-xl font-bold text-deep mt-1.5">
-              $390 <span className="text-[13px] font-normal text-foreground/25">MXN — cuota unica</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Cobertura() {
-  const zonas = [
-    "Polanco", "Condesa", "Roma", "Del Valle", "Coyoacan",
-    "Santa Fe", "Lomas de Chapultepec", "Pedregal", "Interlomas",
-    "Narvarte", "San Angel", "Tlalpan",
-  ];
-
-  return (
-    <section id="cobertura" className="py-28 sm:py-32 bg-warm-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-[400px] h-[300px] rounded-full bg-gradient-to-br from-teal/4 to-transparent blur-3xl pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-teal/65 mb-5">
-              Cobertura
-            </p>
-            <h2 className="font-display text-[2rem] md:text-[2.6rem] lg:text-[3rem] font-semibold text-deep leading-[1.08] tracking-tight">
-              Servicio en toda la Ciudad de Mexico
-            </h2>
-            <p className="mt-5 text-foreground/40 text-[15px] leading-relaxed max-w-md">
-              Atendemos la Zona Metropolitana de la Ciudad de Mexico. Nuestras capacitaciones
-              se adaptan a los horarios de tu personal para no interferir con su trabajo.
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-teal/8 flex items-center justify-center">
-                <MapPinIcon className="w-5 h-5 text-teal" />
-              </div>
-              <div>
-                <p className="text-[14px] font-bold text-deep">CDMX y Zona Metropolitana</p>
-                <p className="text-[12px] text-foreground/35">Horarios flexibles disponibles</p>
-              </div>
-            </div>
-            <a
-              href="#contacto"
-              className="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-deep to-[#3A241A] text-white font-semibold px-7 py-3.5 rounded-full text-[14px] transition-all duration-300 shadow-lg shadow-deep/10 hover:shadow-xl hover:-translate-y-0.5"
-            >
-              Consulta disponibilidad
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 border border-sand-dark/20 shadow-sm">
-            <p className="text-[12px] font-bold uppercase tracking-wider text-foreground/30 mb-5">
-              Algunas zonas que atendemos
-            </p>
-            <div className="flex flex-wrap gap-2.5">
-              {zonas.map((z) => (
-                <span
-                  key={z}
-                  className="bg-gradient-to-r from-sand/60 to-sand/40 text-deep/70 text-[13px] font-medium px-4 py-2 rounded-full border border-sand-dark/15 hover:border-terracotta/20 hover:text-terracotta transition-colors duration-300"
-                >
-                  {z}
-                </span>
-              ))}
-            </div>
-            <p className="mt-5 text-[12px] text-foreground/30 italic">
-              Y mas colonias en CDMX y area metropolitana.
+            <p className="text-xl font-bold text-deep mt-2">
+              $390 <span className="text-[13px] font-normal text-foreground/22">MXN — cuota unica</span>
             </p>
           </div>
         </div>
@@ -961,15 +865,15 @@ function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-28 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-[#FBF6F0] to-cream/40" />
+    <section id="faq" className="py-28 sm:py-36 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-warm-white via-cream/30 to-warm-white" />
 
       <div className="relative max-w-2xl mx-auto px-5 sm:px-8">
-        <div className="text-center mb-14">
-          <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-teal/65 mb-5">
+        <div className="text-center mb-16">
+          <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#2E5B5C]/45 mb-5">
             Resolvemos tus dudas
           </p>
-          <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
+          <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
             Preguntas frecuentes
           </h2>
         </div>
@@ -980,17 +884,17 @@ function FAQ() {
               key={i}
               className={`bg-white rounded-2xl border overflow-hidden transition-all duration-300 ${
                 openIdx === i
-                  ? "border-terracotta/20 shadow-lg"
-                  : "border-sand-dark/20 shadow-sm hover:shadow-md hover:border-sand-dark/35"
+                  ? "border-[#BF4D28]/20 shadow-xl"
+                  : "border-[#D6CABB]/20 shadow-sm hover:shadow-lg hover:border-[#D6CABB]/40"
               }`}
             >
               <button
                 onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-5 text-left text-[15px] font-semibold text-deep hover:text-terracotta transition-colors duration-200"
+                className="w-full flex items-center justify-between px-7 py-6 text-left text-[15px] font-bold text-deep hover:text-[#BF4D28] transition-colors duration-200"
               >
                 <span className="pr-4">{f.q}</span>
-                <span className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 ${
-                  openIdx === i ? "bg-terracotta text-white rotate-180" : "bg-sand/60 text-deep/25"
+                <span className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300 ${
+                  openIdx === i ? "bg-[#BF4D28] text-white rotate-180" : "bg-sand/55 text-deep/20"
                 }`}>
                   <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
@@ -998,7 +902,7 @@ function FAQ() {
                 </span>
               </button>
               {openIdx === i && (
-                <div className="px-6 pb-5 text-[14px] text-foreground/42 leading-relaxed animate-fade-in">
+                <div className="px-7 pb-6 text-[14.5px] text-foreground/40 leading-[1.75] animate-fade-in">
                   {f.a}
                 </div>
               )}
@@ -1040,26 +944,27 @@ function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="py-28 sm:py-32 bg-warm-white relative">
-      <div className="absolute top-0 right-0 w-[400px] h-[300px] rounded-full bg-gradient-to-bl from-peach/6 to-transparent blur-3xl pointer-events-none" />
+    <section id="contacto" className="py-28 sm:py-36 bg-warm-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[450px] h-[350px] rounded-full bg-gradient-to-bl from-peach/5 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[250px] rounded-full bg-gradient-to-tr from-[#2E5B5C]/3 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
         <div className="max-w-lg mx-auto">
           <div className="text-center">
-            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-terracotta/65 mb-5">
+            <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-[#BF4D28]/45 mb-5">
               Contactanos
             </p>
-            <h2 className="font-display text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold text-deep leading-[1.08] tracking-tight">
+            <h2 className="font-display text-[2.4rem] md:text-[3rem] lg:text-[3.6rem] font-bold text-deep leading-[1.04] tracking-tight">
               Solicita informacion
             </h2>
-            <p className="mt-5 text-foreground/40 text-[15px]">
-              Completa el formulario y nos pondremos en contacto contigo a la brevedad.
+            <p className="mt-5 text-foreground/38 text-[15.5px]">
+              Completa el formulario y nos pondremos en contacto a la brevedad.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="mt-10 space-y-4">
+          <form onSubmit={handleSubmit} className="mt-12 space-y-5">
             <div>
-              <label htmlFor="nombre" className="block text-[12px] font-bold text-deep/60 mb-1.5 uppercase tracking-wide">
+              <label htmlFor="nombre" className="block text-[11px] font-extrabold text-deep/55 mb-2 uppercase tracking-wider">
                 Nombre completo
               </label>
               <input
@@ -1068,13 +973,13 @@ function ContactForm() {
                 required
                 value={form.nombre}
                 onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                className="w-full px-4 py-3.5 rounded-xl border border-sand-dark/30 bg-white focus:ring-2 focus:ring-terracotta/12 focus:border-terracotta/30 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/20"
+                className="w-full px-5 py-4 rounded-xl border border-[#D6CABB]/30 bg-white focus:ring-2 focus:ring-[#BF4D28]/10 focus:border-[#BF4D28]/25 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/18"
                 placeholder="Tu nombre"
               />
             </div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="whatsapp" className="block text-[12px] font-bold text-deep/60 mb-1.5 uppercase tracking-wide">
+                <label htmlFor="whatsapp" className="block text-[11px] font-extrabold text-deep/55 mb-2 uppercase tracking-wider">
                   WhatsApp
                 </label>
                 <input
@@ -1083,12 +988,12 @@ function ContactForm() {
                   required
                   value={form.whatsapp}
                   onChange={(e) => setForm({ ...form, whatsapp: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl border border-sand-dark/30 bg-white focus:ring-2 focus:ring-terracotta/12 focus:border-terracotta/30 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/20"
+                  className="w-full px-5 py-4 rounded-xl border border-[#D6CABB]/30 bg-white focus:ring-2 focus:ring-[#BF4D28]/10 focus:border-[#BF4D28]/25 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/18"
                   placeholder="+52 55 1234 5678"
                 />
               </div>
               <div>
-                <label htmlFor="correo" className="block text-[12px] font-bold text-deep/60 mb-1.5 uppercase tracking-wide">
+                <label htmlFor="correo" className="block text-[11px] font-extrabold text-deep/55 mb-2 uppercase tracking-wider">
                   Correo electronico
                 </label>
                 <input
@@ -1097,13 +1002,13 @@ function ContactForm() {
                   required
                   value={form.correo}
                   onChange={(e) => setForm({ ...form, correo: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl border border-sand-dark/30 bg-white focus:ring-2 focus:ring-terracotta/12 focus:border-terracotta/30 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/20"
+                  className="w-full px-5 py-4 rounded-xl border border-[#D6CABB]/30 bg-white focus:ring-2 focus:ring-[#BF4D28]/10 focus:border-[#BF4D28]/25 outline-none transition-all duration-200 text-[15px] placeholder:text-foreground/18"
                   placeholder="tu@correo.com"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="mensaje" className="block text-[12px] font-bold text-deep/60 mb-1.5 uppercase tracking-wide">
+              <label htmlFor="mensaje" className="block text-[11px] font-extrabold text-deep/55 mb-2 uppercase tracking-wider">
                 Mensaje
               </label>
               <textarea
@@ -1111,7 +1016,7 @@ function ContactForm() {
                 rows={4}
                 value={form.mensaje}
                 onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
-                className="w-full px-4 py-3.5 rounded-xl border border-sand-dark/30 bg-white focus:ring-2 focus:ring-terracotta/12 focus:border-terracotta/30 outline-none transition-all duration-200 resize-none text-[15px] placeholder:text-foreground/20"
+                className="w-full px-5 py-4 rounded-xl border border-[#D6CABB]/30 bg-white focus:ring-2 focus:ring-[#BF4D28]/10 focus:border-[#BF4D28]/25 outline-none transition-all duration-200 resize-none text-[15px] placeholder:text-foreground/18"
                 placeholder="En que podemos ayudarte?"
               />
             </div>
@@ -1119,20 +1024,20 @@ function ContactForm() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full bg-gradient-to-r from-deep to-[#3A241A] hover:from-[#3A241A] hover:to-deep text-white font-semibold py-4 rounded-full text-[15px] transition-all duration-400 shadow-lg shadow-deep/10 hover:shadow-xl hover:shadow-deep/15 hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0"
+              className="w-full bg-gradient-to-r from-[#1C100A] to-[#3A241A] hover:from-[#3A241A] hover:to-[#1C100A] text-white font-bold py-4.5 rounded-full text-[15px] transition-all duration-400 shadow-xl shadow-deep/12 hover:shadow-2xl hover:shadow-deep/18 hover:-translate-y-0.5 disabled:opacity-55 disabled:hover:translate-y-0"
             >
               {status === "sending" ? "Enviando..." : "Enviar mensaje"}
             </button>
 
             {status === "sent" && (
-              <div className="text-center py-3.5 px-5 rounded-xl bg-teal/6 border border-teal/12 animate-fade-in">
-                <p className="text-teal font-semibold text-[14px]">
+              <div className="text-center py-4 px-5 rounded-xl bg-[#2E5B5C]/5 border border-[#2E5B5C]/10 animate-fade-in">
+                <p className="text-[#2E5B5C] font-bold text-[14px]">
                   Mensaje enviado! Nos pondremos en contacto pronto.
                 </p>
               </div>
             )}
             {status === "error" && (
-              <div className="text-center py-3.5 px-5 rounded-xl bg-red-50 border border-red-200 animate-fade-in">
+              <div className="text-center py-4 px-5 rounded-xl bg-red-50 border border-red-200 animate-fade-in">
                 <p className="text-red-600 font-medium text-[14px]">
                   Hubo un error. Intenta de nuevo o escribenos por WhatsApp.
                 </p>
@@ -1149,31 +1054,34 @@ function CTAFinal() {
   return (
     <section className="relative overflow-hidden">
       {/* Deep desert sunset gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1E120A] via-[#3A2018] to-[#1E120A]" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#C4522A]/12 via-transparent to-[#C4A060]/8" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1C100A] via-[#381F14] to-[#1C100A]" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#BF4D28]/10 via-transparent to-[#DBA65C]/6" />
 
-      {/* Warm glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[400px] rounded-full bg-[#C4522A]/6 blur-[120px] pointer-events-none" />
-      <div className="absolute top-0 right-[20%] w-[300px] h-[300px] rounded-full bg-[#C4A060]/4 blur-[80px] pointer-events-none" />
+      {/* Warm glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] rounded-full bg-[#BF4D28]/5 blur-[130px] pointer-events-none" />
+      <div className="absolute top-0 right-[18%] w-[350px] h-[350px] rounded-full bg-[#DBA65C]/3 blur-[90px] pointer-events-none" />
 
-      <div className="relative max-w-3xl mx-auto px-5 sm:px-8 py-28 sm:py-32 text-center">
-        <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/25 mb-6">
-          Comienza hoy
+      {/* Grain */}
+      <div className="absolute inset-0 grain-overlay opacity-20" />
+
+      <div className="relative max-w-3xl mx-auto px-5 sm:px-8 py-28 sm:py-36 text-center">
+        <p className="text-[11.5px] font-extrabold uppercase tracking-[0.22em] text-white/20 mb-7">
+          Da el primer paso
         </p>
-        <h2 className="font-display text-[2.2rem] md:text-[3rem] lg:text-[3.6rem] font-semibold text-white leading-[1.08] tracking-tight">
+        <h2 className="font-display text-[2.4rem] md:text-[3.2rem] lg:text-[4rem] font-bold text-white leading-[1.04] tracking-tight">
           Profesionaliza a tu personal del hogar hoy
         </h2>
-        <p className="mt-7 text-[16px] md:text-[17px] text-white/40 max-w-xl mx-auto leading-[1.75]">
+        <p className="mt-8 text-[16.5px] md:text-[18px] text-white/35 max-w-xl mx-auto leading-[1.8]">
           Unete a las familias y empleadores que ya confian en CertiHogar para
-          capacitar, certificar y conectar con personal del hogar calificado.
+          capacitar, certificar y conectar con personal calificado en CDMX.
         </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contacto"
-            className="w-full sm:w-auto group bg-white text-deep hover:bg-white/90 font-semibold px-9 py-4 rounded-full text-[15px] transition-all duration-300 shadow-xl shadow-white/5 hover:-translate-y-0.5 flex items-center justify-center gap-2.5"
+            className="w-full sm:w-auto group bg-white text-deep hover:bg-white/92 font-bold px-10 py-[18px] rounded-full text-[15px] transition-all duration-300 shadow-xl shadow-white/5 hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-3"
           >
             Solicitar informacion
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </a>
@@ -1181,7 +1089,7 @@ function CTAFinal() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-white/6 hover:bg-white/12 text-white/75 font-medium px-8 py-4 rounded-full text-[15px] transition-all duration-300 border border-white/8 hover:border-white/15 hover:-translate-y-0.5"
+            className="w-full sm:w-auto flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 text-white/70 font-semibold px-9 py-[18px] rounded-full text-[15px] transition-all duration-300 border border-white/7 hover:border-white/14 hover:-translate-y-0.5"
           >
             <WhatsAppIcon className="w-[18px] h-[18px]" />
             Hablar por WhatsApp
@@ -1194,55 +1102,53 @@ function CTAFinal() {
 
 function Footer() {
   return (
-    <footer className="bg-[#140C06] text-white/45 py-14">
+    <footer className="bg-[#120A04] text-white/40 py-16">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#C4522A] to-[#D97B5A] flex items-center justify-center shadow-sm">
+            <div className="flex items-center gap-2.5 mb-5">
+              <span className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#BF4D28] to-[#D47A58] flex items-center justify-center shadow-sm">
                 <ShieldIcon className="w-4 h-4 text-white" />
               </span>
-              <span className="font-display text-lg font-semibold text-white/75">CertiHogar</span>
+              <span className="font-display text-lg font-bold text-white/70">CertiHogar</span>
             </div>
-            <p className="text-[13px] leading-relaxed text-white/30">
+            <p className="text-[13px] leading-[1.7] text-white/25">
               Capacitacion y certificacion de personal del hogar en Ciudad de
               Mexico. Formacion practica, verificable y profesional.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-white/55 mb-4 text-[11px] uppercase tracking-widest">Navegacion</h4>
-            <ul className="space-y-2.5 text-[13px]">
+            <h4 className="font-bold text-white/50 mb-4 text-[10.5px] uppercase tracking-[0.15em]">Navegacion</h4>
+            <ul className="space-y-3 text-[13px]">
               <li><a href="#beneficios" className="hover:text-peach transition-colors duration-200">Beneficios</a></li>
               <li><a href="#como-funciona" className="hover:text-peach transition-colors duration-200">Como funciona</a></li>
-              <li><a href="#certificacion" className="hover:text-peach transition-colors duration-200">Certificacion</a></li>
               <li><a href="#precios" className="hover:text-peach transition-colors duration-200">Precios</a></li>
-              <li><a href="#cobertura" className="hover:text-peach transition-colors duration-200">Cobertura</a></li>
+              <li><a href="#faq" className="hover:text-peach transition-colors duration-200">FAQ</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-white/55 mb-4 text-[11px] uppercase tracking-widest">Contacto</h4>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>info@example.com</li>
-              <li>+00 000 000 0000</li>
-              <li>123 Main Street, City, Country</li>
+            <h4 className="font-bold text-white/50 mb-4 text-[10.5px] uppercase tracking-[0.15em]">Contacto</h4>
+            <ul className="space-y-3 text-[13px]">
+              <li>info@certihogar.mx</li>
+              <li>Ciudad de Mexico, CDMX</li>
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-white/55 mb-4 text-[11px] uppercase tracking-widest">Siguenos</h4>
+            <h4 className="font-bold text-white/50 mb-4 text-[10.5px] uppercase tracking-[0.15em]">WhatsApp</h4>
             <div className="flex gap-2.5">
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                className="w-11 h-11 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
                 aria-label="WhatsApp"
               >
-                <WhatsAppIcon className="w-4 h-4" />
+                <WhatsAppIcon className="w-4.5 h-4.5" />
               </a>
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-white/5 text-center text-[12px] text-white/18">
+        <div className="mt-14 pt-8 border-t border-white/5 text-center text-[12px] text-white/15">
           <p>
             &copy; {new Date().getFullYear()} CertiHogar. Todos los derechos reservados.
           </p>
@@ -1259,13 +1165,12 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <FranjaConfianza />
       <PropuestaValor />
-      <BeneficiosFamilias />
       <ComoFunciona />
-      <Certificacion />
+      <Beneficios />
       <Testimonios />
       <Precios />
-      <Cobertura />
       <FAQ />
       <ContactForm />
       <CTAFinal />
